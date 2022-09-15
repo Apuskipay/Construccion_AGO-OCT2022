@@ -23,7 +23,7 @@ namespace CRUD
         }
 
         //Create
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             var contactType = new ContactType();
             contactType.Name = txbName.Text;
@@ -32,7 +32,7 @@ namespace CRUD
             contactType.CreatedDate = DateTime.Now;
 
             db.ContactTypes.Add(contactType);
-            var clientTypesSaved = db.SaveChanges() > 0;
+            var contactTypeSaved = db.SaveChanges() > 0;
             GetContactTypes();
         }
         //Read
@@ -79,7 +79,8 @@ namespace CRUD
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             var update =
             from contactType in db.ContactTypes
@@ -127,12 +128,11 @@ namespace CRUD
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             Delete();
             GetContactTypes();
         }
-
 
     }
 }
